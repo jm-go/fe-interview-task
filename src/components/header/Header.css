@@ -6,17 +6,18 @@
   justify-content: space-between;
   background-color: var(--color-header-bg);
   color: var(--color-header-text);
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1rem;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  position: relative;
 }
 
 .header__logo img {
-  height: 1.75rem;
+  height: 1.5rem;
   filter: brightness(0) invert(1);
 }
 
 .header__title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   margin: 0;
   color: var(--color-header-text);
@@ -24,31 +25,10 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  white-space: nowrap;
 }
 
-.header__add-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 0.125rem solid var(--color-header-text);
-  background-color: transparent;
-  color: var(--color-header-text);
-  text-decoration: none;
-  font-weight: 400;
-  transition: all 0.25s ease;
-  cursor: pointer;
-}
-
-.header__add-btn:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #fff;
-  transform: scale(1.05);
-}
-
+.header__add-btn,
 .header__icon-btn {
   display: flex;
   align-items: center;
@@ -56,16 +36,34 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  border: 2px solid var(--color-header-text);
   background: transparent;
   color: var(--color-header-text);
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
+.header__add-btn {
+  border: 0.125rem solid var(--color-header-text);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.header__icon-btn {
+  border: 0.125rem solid var(--color-header-text);
+}
+
+.header__add-btn:hover,
 .header__icon-btn:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #fff;
   transform: scale(1.05);
+}
+
+@media (min-width: 600px) {
+  .header { padding: 0.75rem 1.25rem; }
+  .header__logo img { height: 1.75rem; }
+  .header__title { font-size: 1.25rem; }
+}
+
+@media (min-width: 1024px) {
+  .header { padding: 1rem 2rem; }
+  .header__title { font-size: 1.375rem; }
 }
