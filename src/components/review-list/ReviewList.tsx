@@ -1,49 +1,42 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { Layout } from "../Layout";
 import { FilmCard } from "../film-card/FilmCard";
+import { GenreDropdown } from "../genre-dropdown/GenreDropdown";
 
-// Placeholder items, to be deleted when integrating with API
+// TODO: Replace with real data fetching
 const items = [
-  {
-    id: "1",
-    title: "The Godfather",
-    director: "Francis Ford Coppola",
-    year: 1972,
-    description:
-      "Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut...",
-  },
-  {
-    id: "2",
-    title: "Taxi Driver",
-    director: "Martin Scorsese",
-    year: 1976,
-    description:
-      "Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut... Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut...Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut... Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut... Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut...vSome review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut...",
-  },
+  { id: "1", title: "The Godfather", director: "Francis Ford Coppola", year: 1972, genres: ["Crime", "Drama"], description: "…" },
+  { id: "2", title: "Taxi Driver", director: "Martin Scorsese", year: 1976, genres: ["Crime", "Drama"], description: "…" },
 ];
 
 const ReviewList: React.FC = () => {
-  const hasReviews = items.length > 0;
+  const [genre, setGenre] = useState<string>("");
+
+  const genres = useMemo(() => {
+    const s = new Set<string>();
+    items.forEach((i) => i.genres?.forEach((g) => s.add(g)));
+    return Array.from(s).sort();
+  }, []);
+
+  const filtered = useMemo(() => {
+    if (!genre || genre === "all") return items;
+    return items.filter((i) => i.genres?.includes(genre));
+  }, [genre]);
 
   return (
     <Layout>
-      {hasReviews ? (
-        items.map((item) => <FilmCard key={item.id} {...item} />)
-      ) : (
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "4rem",
-            color: "#6b7280",
-            fontSize: "1rem",
-          }}
-        >
-          <p>Your reviews will appear here...</p>
-          <span role="img" aria-label="film">
-            🎬
-          </span>
-        </div>
-      )}
+      <div style={{ margin: "1rem auto", width: "30rem" }}>
+        <GenreDropdown
+          genres={genres}
+          value={genre}
+          onChange={setGenre}
+          placeholder="Filter by genre"
+        />
+      </div>
+
+      {filtered.map((it) => (
+        <FilmCard key={it.id} {...it} />
+      ))}
     </Layout>
   );
 };
