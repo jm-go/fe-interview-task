@@ -1,7 +1,7 @@
 @import "../../styles/colors.css";
 
 .review-form {
-  max-width: 36rem;
+  max-width: 40rem;
   margin: 1rem auto 2rem;
   padding: 1rem 1.25rem;
   background: #fff;

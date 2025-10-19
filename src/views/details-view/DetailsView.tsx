@@ -38,37 +38,37 @@ export const DetailsView: React.FC = () => {
     navigate("/review-list");
   };
 
-  return (
-    <Layout
-      headerProps={{
-        isDetailsView: true,
-        onDelete: handleDelete,
-        title: title,
-      }}
-    >
-      <div className="details-center-wrapper">
-        <article className="details">
-          <div className="details__top">
-            <div className="details__heading">
-              <h2 className="details__title">{title}</h2>
-              {(director || year) && (
-                <div className="details__meta">
-                  {director && <div>{director}</div>}
-                  {year && <div>{year}</div>}
-                </div>
-              )}
-            </div>
-
-            <div className="details__thumb">
-              <img src={imageUrl} alt={`${title} poster`} />
-            </div>
+return (
+  <Layout
+    headerProps={{
+      isDetailsView: true,
+      onDelete: handleDelete,
+      title,
+    }}
+  >
+    <div className="details-page">
+      <article className="details">
+        <div className="details__top">
+          <div className="details__heading">
+            <h2 className="details__title">{title}</h2>
+            {(director || year) && (
+              <div className="details__meta">
+                {director && <div>{director}</div>}
+                {year && <div>{year}</div>}
+              </div>
+            )}
           </div>
 
-          <p className="details__body">{description}</p>
-        </article>
-      </div>
-    </Layout>
-  );
+          <div className="details__thumb">
+            <img src={imageUrl} alt={`${title} poster`} />
+          </div>
+        </div>
+
+        <p className="details__body">{description}</p>
+      </article>
+    </div>
+  </Layout>
+);
 };
 
 export default DetailsView;
