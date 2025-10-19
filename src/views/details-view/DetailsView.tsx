@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Layout } from "../Layout";
+import { Layout } from "../../components/Layout";
+import { deleteReview, getAllReviews } from "../../storage/reviews";
 import "./DetailsView.css";
 
 type Item = {
@@ -17,7 +18,9 @@ export const DetailsView: React.FC = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const item: Item | undefined = state?.item;
+  const allReviews = getAllReviews();
+  const item: Item | undefined =
+    state?.item || allReviews.find((r) => r.id === id);
 
   const title = item?.title ?? "";
   const director = item?.director;
@@ -25,22 +28,25 @@ export const DetailsView: React.FC = () => {
   const imageUrl = item?.imageUrl || "/image-placeholder.png";
   const description =
     item?.description ??
-    "No review text yet. You can add or edit this review from the list.";
+    "No review text yet.";
 
   const handleDelete = () => {
     const ok = window.confirm("Do you want to delete this review?");
-    // TODO: Add delete logic later
-    if (ok) navigate("/review-list");;
+    if (!ok || !id) return;
+
+    deleteReview(id);
+    navigate("/review-list");
   };
 
-  return (
-    <Layout
-      headerProps={{
-        isDetailsView: true,
-        onDelete: handleDelete,
-        title: title,
-      }}
-    >
+return (
+  <Layout
+    headerProps={{
+      isDetailsView: true,
+      onDelete: handleDelete,
+      title,
+    }}
+  >
+    <div className="details-page">
       <article className="details">
         <div className="details__top">
           <div className="details__heading">
@@ -60,8 +66,9 @@ export const DetailsView: React.FC = () => {
 
         <p className="details__body">{description}</p>
       </article>
-    </Layout>
-  );
+    </div>
+  </Layout>
+);
 };
 
 export default DetailsView;

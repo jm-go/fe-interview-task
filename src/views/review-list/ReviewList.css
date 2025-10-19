@@ -1,0 +1,38 @@
+:root{
+  --header-h: 4rem;
+  --content-max-w: 50rem;
+}
+
+.review-list {
+  height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.genre-filter-bar {
+  flex: 0 0 auto;
+  max-width: var(--content-max-w);
+  width: 100%;
+  margin: 0 auto 0.75rem;
+}
+
+.reviews-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: var(--content-max-w);
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+
+.reviews-empty {
+  text-align: center;
+  opacity: 0.7;
+  margin-top: 2rem;
+}

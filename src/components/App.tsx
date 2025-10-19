@@ -4,12 +4,22 @@ import { Layout } from "./Layout";
 
 const App = () => (
   <Layout showHeader={false}>
-    <img
-      src={mubiLogo}
-      alt="MUBI"
-      style={{ width: "65%", minWidth: 180, maxWidth: 280, marginBottom: "1.75rem" }}
-    />
-    <Button label="START" to="/review-list" />
+    <div
+      style={{
+        minHeight: "80vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <img
+        src={mubiLogo}
+        alt="MUBI"
+        style={{ width: "65%", minWidth: 180, maxWidth: 280, marginBottom: "1.75rem" }}
+      />
+      <Button label="START" to="/review-list" />
+    </div>
   </Layout>
 );
 

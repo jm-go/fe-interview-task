@@ -4,6 +4,7 @@ export type Film = {
   release_year: number;
   genres: string[];
   image_url: string;
+  cast: FilmCastMember[];
 };
 
 export type Review = {
@@ -13,4 +14,12 @@ export type Review = {
   filmYear: number;
   filmGenres?: string[];
   reviewText: string;
+  image_url: string;
+  filmDirector?: string;
+};
+
+export type FilmCastMember = {
+  id: string;
+  name: string;
+  credits: string[];
 };
