@@ -1,0 +1,97 @@
+@import "../../styles/colors.css";
+
+.review-form {
+  max-width: 36rem;
+  margin: 1rem auto 2rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.review-form__group {
+  margin-bottom: 1.25rem;
+}
+
+.review-form__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.review-form__textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 0.5rem;
+  font: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.review-form__suggestions {
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.review-form__suggestions li {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.review-form__suggestions li:hover,
+.review-form__suggestions li:focus {
+  background: #f6f7f9;
+}
+
+.review-form__year {
+  color: var(--color-text-secondary, #6b7280);
+  margin-left: 0.25rem;
+}
+
+.review-form__selected {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 999px;
+}
+
+.review-form__clear {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.review-form__actions {
+  margin-top: 1rem;
+}
+
+.review-form__save {
+  background-color: var(--color-grey);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.review-form__save:not(:disabled):hover {
+  background-color: var(--color-grey-hover);
+}
+
+.review-form__save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
