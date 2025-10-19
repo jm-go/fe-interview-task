@@ -13,4 +13,5 @@ export type Review = {
   filmYear: number;
   filmGenres?: string[];
   reviewText: string;
+  image_url: string;
 };
