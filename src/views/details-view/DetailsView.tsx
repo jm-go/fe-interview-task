@@ -46,14 +46,7 @@ export const DetailsView: React.FC = () => {
         title: title,
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="details-center-wrapper">
         <article className="details">
           <div className="details__top">
             <div className="details__heading">
