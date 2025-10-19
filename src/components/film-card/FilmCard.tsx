@@ -49,7 +49,11 @@ export const FilmCard: React.FC<Props> = ({
         </p>
       )}
 
-      <Link className="film-card__more" to={to}>
+        <Link
+        className="film-card__more"
+        to={to}
+        state={{ item: { id, title, director, year, description, imageUrl } }}
+      >
         Read more
       </Link>
 

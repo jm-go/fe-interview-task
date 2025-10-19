@@ -18,7 +18,7 @@ const items = [
     director: "Martin Scorsese",
     year: 1976,
     description:
-      "Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut...",
+      "Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut... Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut...Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut... Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut... Some review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut...vSome review text lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis bibendum purus, ut...",
   },
 ];
 

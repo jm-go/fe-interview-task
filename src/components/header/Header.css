@@ -45,3 +45,24 @@
   color: #fff;
   transform: scale(1.05);
 }
+
+.header__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-header-text);
+  background: transparent;
+  color: var(--color-header-text);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.header__icon-btn:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  transform: scale(1.05);
+}
