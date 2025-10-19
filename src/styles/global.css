@@ -16,7 +16,32 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-height: 90vh;
   height: 90vh;
   text-align: center;
+  position: relative;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.genre-filter-bar {
+  position: sticky;
+  top: 3.5rem;
+  z-index: 9;
+  background: var(--color-bg);
+  padding-bottom: 0.5rem;
+}
+
+.reviews-scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding-bottom: 2rem;
 }

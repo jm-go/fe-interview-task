@@ -46,25 +46,34 @@ export const DetailsView: React.FC = () => {
         title: title,
       }}
     >
-      <article className="details">
-        <div className="details__top">
-          <div className="details__heading">
-            <h2 className="details__title">{title}</h2>
-            {(director || year) && (
-              <div className="details__meta">
-                {director && <div>{director}</div>}
-                {year && <div>{year}</div>}
-              </div>
-            )}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <article className="details">
+          <div className="details__top">
+            <div className="details__heading">
+              <h2 className="details__title">{title}</h2>
+              {(director || year) && (
+                <div className="details__meta">
+                  {director && <div>{director}</div>}
+                  {year && <div>{year}</div>}
+                </div>
+              )}
+            </div>
+
+            <div className="details__thumb">
+              <img src={imageUrl} alt={`${title} poster`} />
+            </div>
           </div>
 
-          <div className="details__thumb">
-            <img src={imageUrl} alt={`${title} poster`} />
-          </div>
-        </div>
-
-        <p className="details__body">{description}</p>
-      </article>
+          <p className="details__body">{description}</p>
+        </article>
+      </div>
     </Layout>
   );
 };
