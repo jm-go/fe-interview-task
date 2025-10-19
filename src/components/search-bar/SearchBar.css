@@ -1,0 +1,24 @@
+@import "../../styles/colors.css";
+
+.search-bar {
+  width: 100%;
+  max-width: 50rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  font: inherit;
+  color: var(--color-text-primary, #1f2937);
+  background: #fff;
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 0.5rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-bar::placeholder {
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.search-bar:hover,
+.search-bar:focus {
+  border-color: var(--color-accent, #7c3aed);
+}
