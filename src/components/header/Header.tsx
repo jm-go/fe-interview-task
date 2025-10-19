@@ -6,20 +6,24 @@ import "./Header.css";
 
 export type HeaderProps = {
   isDetailsView?: boolean;
+  isAddView?: boolean;
   onDelete?: () => void;
   title?: string;
 };
 
 export const Header: React.FC<HeaderProps> = ({
   isDetailsView = false,
+  isAddView = false,
   onDelete,
   title = "Film Log",
 }) => {
   const navigate = useNavigate();
 
+  const displayTitle = isAddView ? "Add Review" : title;
+
   return (
     <header className="header">
-      {isDetailsView ? (
+      {isDetailsView || isAddView ? (
         <button
           className="header__icon-btn"
           aria-label="Go back"
@@ -34,22 +38,24 @@ export const Header: React.FC<HeaderProps> = ({
         </Link>
       )}
 
-      <h1 className="header__title">{title}</h1>
+  <h1 className="header__title">{displayTitle}</h1>
 
-      {isDetailsView ? (
-        <button
-          className="header__icon-btn"
-          aria-label="Delete review"
-          title="Delete review"
-          onClick={onDelete}
-        >
-          <FiTrash2 size={18} />
-        </button>
-      ) : (
-        <Link to="/reviews/new" className="header__add-btn" title="Add review">
-          <FiPlus size={20} />
-        </Link>
-      )}
+      {!isAddView ? (
+        isDetailsView ? (
+          <button
+            className="header__icon-btn"
+            aria-label="Delete review"
+            title="Delete review"
+            onClick={onDelete}
+          >
+            <FiTrash2 size={18} />
+          </button>
+        ) : (
+          <Link to="/reviews/new" className="header__add-btn" title="Add review">
+            <FiPlus size={20} />
+          </Link>
+        )
+      ) : null}
     </header>
   );
 };
