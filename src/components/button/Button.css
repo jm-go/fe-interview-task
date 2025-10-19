@@ -1,0 +1,18 @@
+@import "../../styles/colors.css";
+
+.button {
+  background-color: var(--color-grey);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1.5rem;
+}
+
+.button:hover {
+  background-color: var(--color-grey-hover);
+}

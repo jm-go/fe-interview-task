@@ -1,22 +1,16 @@
+import { Button } from "./button/Button";
 import mubiLogo from "/logo.svg";
+import { Layout } from "./Layout";
 
 const App = () => (
-  <div
-    style={{
-      height: "100vh",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    }}
-  >
+  <Layout showHeader={false}>
     <img
       src={mubiLogo}
-      style={{
-        width: "30vw",
-        minWidth: "200px",
-      }}
+      alt="MUBI"
+      style={{ width: "65%", minWidth: 180, maxWidth: 280, marginBottom: "1.75rem" }}
     />
-  </div>
+    <Button label="START" to="/review-list" />
+  </Layout>
 );
 
 export default App;
