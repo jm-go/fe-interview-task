@@ -4,7 +4,7 @@
   max-width: 40rem;
   margin: 1rem auto 2rem;
   padding: 1rem 1.25rem;
-  background: #fff;
+  background: var(--color-bg);
   box-sizing: border-box;
 }
 
@@ -21,7 +21,7 @@
 .review-form__textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid var(--color-border, #e5e7eb);
+  border: 1px solid var(--color-border);
   border-radius: 0.5rem;
   font: inherit;
   resize: vertical;
@@ -32,10 +32,10 @@
   margin: 0.25rem 0 0;
   padding: 0;
   list-style: none;
-  border: 1px solid var(--color-border, #e5e7eb);
+  border: 1px solid var(--color-border);
   border-radius: 0.5rem;
   overflow: hidden;
-  background: #fff;
+  background: var(--color-bg);
 }
 
 .review-form__suggestions li {
@@ -45,11 +45,11 @@
 
 .review-form__suggestions li:hover,
 .review-form__suggestions li:focus {
-  background: #f6f7f9;
+  background: var(--color-grey);
 }
 
 .review-form__year {
-  color: var(--color-text-secondary, #6b7280);
+  color: var(--color-text-secondary);
   margin-left: 0.25rem;
 }
 
@@ -59,7 +59,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.25rem 0.5rem;
-  border: 1px solid var(--color-border, #e5e7eb);
+  border: 1px solid var(--color-border);
   border-radius: 999px;
 }
 
