@@ -15,10 +15,6 @@
   cursor: pointer;
 }
 
-.dropdown.placeholder {
-  color: var(--color-text-secondary);
-}
-
 .dropdown:hover,
 .dropdown:focus {
   border-color: var(--color-purple);
