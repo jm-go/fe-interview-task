@@ -48,3 +48,40 @@ You may wish to fork this repository into your local github account, or you may 
 
 
 Reach out over email if you have any questions!
+
+## Solution Approach
+
+### App Navigation & Structure
+
+- Main views: `ReviewList`, `DetailsView`, and `NewReview` are located in the `src/views` directory.
+- Reusable UI, shared layout and logic are in the `src/components` directory.
+- Shared state for films is managed via `FilmsContext` and `FilmsProvider` in the `src/context` directory.
+- Local storage utilities are in `src/storage` for review persistence.
+- Type definitions are in `src/types`, and helpers in `src/utils`.
+- Style definitions are in `src/styles`, including color tokens and global stylesheet.
+
+### Technical Approach
+
+- **FilmsProvider** fetches all films from the API once on app load and provides them to all views.
+- **localStorage** is used for review persistence, so user reviews remain available across sessions.
+- **Each review** is stored with a **unique, canonical ID** derived from the film ID and creation timestamp.
+- **Media queries** are used in a mobile-first approach for all major components, ensuring the app is responsive and user-friendly on different devices.
+- **User actions** include
+    - Viewing a complete list of saved reviews.
+    - Filtering reviews by film genre using the dropdown menu.
+    - Adding a new review through the NewReview form
+    - Searching and selecting a film dynamically while writing a new review.
+    - Viewing detailed information about each review in the DetailsView screen.
+    - Deleting an existing review if desired.
+
+
+<img src="public/app-demo-1.png" alt="Review List" width="400"/>
+
+
+<img src="public/app-demo-2.png" alt="Review Detailed View" width="400"/>
+
+
+<img src="public/app-demo-3.png" alt="Add Review View" width="400"/>
+
+
+<img src="public/app-demo-4.png" alt="Mobile Review List" width="300"/>

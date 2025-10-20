@@ -1,6 +1,6 @@
-:root{
+:root {
   --header-h: 4rem;
-  --content-max-w: 50rem;
+  --content-max-w: 92vw;
 }
 
 .review-list {
@@ -8,14 +8,15 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  width: 100%;
   box-sizing: border-box;
 }
 
 .genre-filter-bar {
   flex: 0 0 auto;
-  max-width: var(--content-max-w);
   width: 100%;
-  margin: 0 auto 0.75rem;
+  max-width: var(--content-max-w);
+  margin: 0 auto 0.5rem;
 }
 
 .reviews-scroll {
@@ -23,16 +24,26 @@
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  max-width: var(--content-max-w);
   width: 100%;
+  max-width: var(--content-max-w);
   margin: 0 auto;
   padding-bottom: 1rem;
   box-sizing: border-box;
 }
 
-
 .reviews-empty {
   text-align: center;
   opacity: 0.7;
   margin-top: 2rem;
+}
+
+@media (min-width: 600px) {
+  :root { --content-max-w: 35rem; }
+  .review-list { padding: 0.875rem; }
+  .genre-filter-bar { margin-bottom: 0.75rem; }
+}
+
+@media (min-width: 1024px) {
+  :root { --content-max-w: 45rem; }
+  .review-list { padding: 1rem; }
 }
