@@ -33,7 +33,6 @@ const ReviewList: React.FC = () => {
             genres={genres}
             value={genre}
             onChange={setGenre}
-            placeholder="Filter by genre"
           />
         </div>
 
